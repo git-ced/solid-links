@@ -44,8 +44,9 @@ export default function Linkify(props: LinkifyProps): JSX.Element {
               {...anchorProps}
               href={word}
             >
-              {`${word} `}
+              {word}
             </a>
+            {' '}
           </Show>
         )}
       </For>
