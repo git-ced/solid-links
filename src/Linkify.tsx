@@ -9,7 +9,7 @@ import {
 // ANCHOR Utils
 import { isLink } from './utils/links';
 
-export interface LinkifyProps extends JSX.HTMLAttributes<HTMLAnchorElement> {
+export interface LinkifyProps extends JSX.AnchorHTMLAttributes<HTMLAnchorElement> {
   text: string;
 }
 
