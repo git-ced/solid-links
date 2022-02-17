@@ -9,7 +9,10 @@ import {
 } from 'solid-js';
 
 // ANCHOR Utils
-import { isLink } from './utils/links';
+import {
+  isLink,
+  extractLinks,
+} from './utils/links';
 
 export interface LinkifyProps extends JSX.AnchorHTMLAttributes<HTMLAnchorElement> {
   text: string;
@@ -42,7 +45,7 @@ export default function Linkify(props: LinkifyProps): JSX.Element {
           >
             <a
               {...anchorProps}
-              href={word}
+              href={extractLinks(word)[0]}
             >
               {word}
             </a>
