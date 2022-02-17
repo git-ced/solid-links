@@ -38,7 +38,9 @@ export default function ViewPage(): JSX.Element {
 
   return (
     <Linkify
-      text={testString}
+      target="_blank"
+      rel="noopener noreferrer"
+      text={'Hello World' || testString}
       class="underline"
     />
   );

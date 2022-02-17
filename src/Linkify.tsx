@@ -25,7 +25,6 @@ export default function Linkify(props: LinkifyProps): JSX.Element {
     const paragraphElement = ref();
 
     if (paragraphElement) {
-      console.log(paragraphElement.innerHTML);
       paragraphElement.innerHTML = paragraphElement.innerHTML.trimEnd();
     }
   });
@@ -36,19 +35,7 @@ export default function Linkify(props: LinkifyProps): JSX.Element {
       ref={setRef}
     >
       <For each={words}>
-        {(word): JSX.Element => (
-          <Show
-            when={isLink(word)}
-            fallback={`${word} `}
-          >
-            <a
-              {...anchorProps}
-              href={word}
-            >
-              {word}
-            </a>
-          </Show>
-        )}
+        {(word): JSX.Element => (word)}
       </For>
     </p>
   );
