@@ -1,4 +1,4 @@
-import Hello from './Hello';
+import Linkify from './Linkify';
 
-export { HelloProps } from './Hello';
-export default Hello;
+export { LinkifyProps } from './Linkify';
+export default Linkify;
