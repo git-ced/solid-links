@@ -53,13 +53,13 @@ or
 
 ### ES6
 ```javascript
-import { Linkify } from 'solid-links';
+import Linkify from 'solid-links';
 ```
 
 ## Usage
 
 ```javascript
-import { Linkify } from 'solid-links';
+import Linkify from 'solid-links';
 
 const TEST_STRING = `
   Will match the following cases
