@@ -17,7 +17,7 @@ export interface LinkifyProps extends JSX.AnchorHTMLAttributes<HTMLAnchorElement
 
 export default function Linkify(props: LinkifyProps): JSX.Element {
   const [local, anchorProps] = splitProps(props, ['text']);
-  const [ref, setRef] = createSignal<HTMLParagraphElement>();
+  const [ref, setRef] = createSignal<HTMLSpanElement>();
 
   const words = local.text.split(' ');
 
@@ -30,10 +30,7 @@ export default function Linkify(props: LinkifyProps): JSX.Element {
   });
 
   return (
-    <p
-      style="white-space: pre-wrap"
-      ref={setRef}
-    >
+    <span ref={setRef}>
       <For each={words}>
         {(word): JSX.Element => (
           <Show
@@ -49,6 +46,6 @@ export default function Linkify(props: LinkifyProps): JSX.Element {
           </Show>
         )}
       </For>
-    </p>
+    </span>
   );
 }

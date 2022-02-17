@@ -6,6 +6,7 @@
       "ESNext",
       "DOM"
     ],
+    "skipLibCheck": true,
     "moduleResolution": "Node",
     "strict": true,
     "sourceMap": true,
