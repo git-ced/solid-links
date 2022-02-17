@@ -1,5 +1,10 @@
 // ANCHOR Solid
-import { JSX, splitProps } from 'solid-js';
+import {
+  JSX,
+  For,
+  Show,
+  splitProps,
+} from 'solid-js';
 
 // ANCHOR Utils
 import { isLink } from './utils/links';
@@ -15,23 +20,21 @@ export default function Linkify(props: LinkifyProps): JSX.Element {
 
   return (
     <p style="white-space: pre-wrap">
-      {
-        words.map((word) => {
-          // Check if the word is a URL
-          if (isLink(word)) {
-            return (
-              <a
-                {...anchorProps}
-                href={word}
-              >
-                {word}
-              </a>
-            );
-          }
-
-          return word || ' ';
-        })
-      }
+      <For each={words}>
+        {(word): JSX.Element => (
+          <Show
+            when={isLink(word)}
+            fallback={word || ' '}
+          >
+            <a
+              {...anchorProps}
+              href={word}
+            >
+              {word}
+            </a>
+          </Show>
+        )}
+      </For>
     </p>
   );
 }
