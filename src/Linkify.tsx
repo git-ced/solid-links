@@ -30,7 +30,10 @@ export default function Linkify(props: LinkifyProps): JSX.Element {
   });
 
   return (
-    <span ref={setRef}>
+    <span
+      ref={setRef}
+      style="white-space: pre-wrap;"
+    >
       <For each={words}>
         {(word): JSX.Element => (
           <Show
